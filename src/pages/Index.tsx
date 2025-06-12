@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { products } from '@/data/products';
 import Header from '@/components/Header';
@@ -31,12 +32,12 @@ const Index = () => {
         <div className="text-center space-y-8 mb-16">
           <div className="space-y-6">
             <div className="flex items-center justify-center space-x-3 mb-4">
-              <Cpu className="h-8 w-8 text-primary animate-pulse" />
-              <Zap className="h-6 w-6 text-neon-green animate-bounce" />
+              <Cpu className="h-8 w-8 text-neon-cyan animate-pulse-glow" />
+              <Zap className="h-6 w-6 text-neon-blue animate-bounce" />
             </div>
             <h1 className="text-5xl lg:text-7xl font-bold text-foreground">
               Tech
-              <span className="block bg-gradient-to-r from-primary via-neon-green to-neon-blue bg-clip-text text-transparent animate-glow">
+              <span className="block tech-gradient bg-clip-text text-transparent animate-glow">
                 Catalog
               </span>
             </h1>
@@ -54,14 +55,14 @@ const Index = () => {
                 placeholder="Pesquisar produtos avançados..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-12 h-14 text-lg glass-effect border-border/50 focus:border-primary/50 transition-all duration-300"
+                className="pl-12 h-14 text-lg dark-glass cyber-border focus:border-neon-cyan/50 transition-all duration-300 focus:neon-glow"
               />
             </div>
 
             <div className="flex flex-wrap justify-center gap-3">
               <Badge
                 variant={selectedCategory === '' ? 'default' : 'outline'}
-                className="cursor-pointer px-6 py-3 text-sm tech-glow transition-all duration-300 hover:scale-105"
+                className="cursor-pointer px-6 py-3 text-sm tech-glow transition-all duration-300 hover:scale-105 hover:neon-glow"
                 onClick={() => setSelectedCategory('')}
               >
                 <Filter className="h-3 w-3 mr-2" />
@@ -71,7 +72,7 @@ const Index = () => {
                 <Badge
                   key={category}
                   variant={selectedCategory === category ? 'default' : 'outline'}
-                  className="cursor-pointer px-6 py-3 text-sm transition-all duration-300 hover:scale-105 hover:tech-glow"
+                  className="cursor-pointer px-6 py-3 text-sm transition-all duration-300 hover:scale-105 hover:neon-glow"
                   onClick={() => setSelectedCategory(category)}
                 >
                   {category}
@@ -86,7 +87,7 @@ const Index = () => {
           <div className="flex items-center justify-between">
             <h2 className="text-3xl font-bold text-foreground flex items-center space-x-3">
               <span>{selectedCategory ? `${selectedCategory}` : 'Todos os Produtos'}</span>
-              <Badge variant="secondary" className="text-lg px-3 py-1">
+              <Badge variant="secondary" className="text-lg px-3 py-1 cyber-border">
                 {filteredProducts.length}
               </Badge>
             </h2>
@@ -94,7 +95,7 @@ const Index = () => {
 
           {filteredProducts.length === 0 ? (
             <div className="text-center py-20">
-              <div className="glass-effect rounded-2xl p-12 max-w-md mx-auto">
+              <div className="dark-glass rounded-2xl p-12 max-w-md mx-auto cyber-border">
                 <Cpu className="h-16 w-16 text-muted-foreground mx-auto mb-4 opacity-50" />
                 <p className="text-muted-foreground text-xl">
                   Nenhum produto encontrado para sua busca.
@@ -114,9 +115,9 @@ const Index = () => {
 
         {/* Call to Action */}
         <div className="mt-20 text-center">
-          <div className="glass-effect rounded-3xl p-10 max-w-2xl mx-auto tech-glow">
+          <div className="dark-glass rounded-3xl p-10 max-w-2xl mx-auto tech-glow cyber-border">
             <div className="flex items-center justify-center space-x-3 mb-6">
-              <Zap className="h-8 w-8 text-primary animate-pulse" />
+              <Zap className="h-8 w-8 text-neon-cyan animate-pulse-glow" />
               <h3 className="text-3xl font-bold text-foreground">
                 Assistente IA Avançado
               </h3>
@@ -127,7 +128,7 @@ const Index = () => {
             </p>
             <button
               onClick={() => setChatOpen(true)}
-              className="bg-gradient-to-r from-primary to-neon-green hover:from-primary/90 hover:to-neon-green/90 text-background px-8 py-4 rounded-xl font-semibold transition-all duration-300 tech-glow hover:scale-105"
+              className="tech-gradient hover:from-cyan-600 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 neon-glow hover:scale-105"
             >
               <MessageCircle className="h-5 w-5 mr-3 inline" />
               Iniciar Conversa com IA

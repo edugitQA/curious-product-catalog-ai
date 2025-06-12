@@ -66,24 +66,38 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Tech-focused color palette
+				// Enhanced tech-focused color palette
 				tech: {
+					50: '#0f172a',
+					100: '#1e293b', 
+					200: '#334155',
+					300: '#475569',
+					400: '#64748b',
+					500: '#94a3b8',
+					600: '#cbd5e1',
+					700: '#e2e8f0',
+					800: '#f1f5f9',
+					900: '#f8fafc',
+				},
+				cyber: {
 					50: '#0a0a0f',
-					100: '#1a1a2e',
-					200: '#16213e',
-					300: '#0f3460',
-					400: '#0e4b99',
-					500: '#2563eb',
-					600: '#3b82f6',
-					700: '#60a5fa',
-					800: '#93c5fd',
-					900: '#dbeafe',
+					100: '#0d1117',
+					200: '#161b22',
+					300: '#21262d', 
+					400: '#30363d',
+					500: '#484f58',
+					600: '#6e7681',
+					700: '#8b949e',
+					800: '#b1bac4',
+					900: '#f0f6fc',
 				},
 				neon: {
-					green: '#00ff88',
-					blue: '#00d4ff',
-					purple: '#a855f7',
+					cyan: '#00f5ff',
+					blue: '#0ea5e9',
+					purple: '#8b5cf6',
 					pink: '#ec4899',
+					green: '#10b981',
+					yellow: '#f59e0b',
 				}
 			},
 			borderRadius: {
@@ -113,15 +127,26 @@ export default {
 					'100%': { opacity: '1', transform: 'translateY(0)' }
 				},
 				'glow': {
-					'0%, 100%': { boxShadow: '0 0 5px hsl(var(--primary))' },
-					'50%': { boxShadow: '0 0 20px hsl(var(--primary)), 0 0 30px hsl(var(--primary))' }
+					'0%, 100%': { boxShadow: '0 0 5px theme(colors.neon.cyan)' },
+					'50%': { boxShadow: '0 0 20px theme(colors.neon.cyan), 0 0 30px theme(colors.neon.cyan)' }
+				},
+				'pulse-glow': {
+					'0%, 100%': { boxShadow: '0 0 5px theme(colors.cyan.400)' },
+					'50%': { boxShadow: '0 0 15px theme(colors.cyan.400), 0 0 25px theme(colors.cyan.500)' }
+				},
+				'cyber-scan': {
+					'0%': { transform: 'translateX(-100%)', opacity: '0' },
+					'50%': { opacity: '1' },
+					'100%': { transform: 'translateX(100%)', opacity: '0' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.5s ease-out',
-				'glow': 'glow 2s ease-in-out infinite alternate'
+				'glow': 'glow 2s ease-in-out infinite alternate',
+				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+				'cyber-scan': 'cyber-scan 3s ease-in-out infinite'
 			}
 		}
 	},
