@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { products } from '@/data/products';
 import Header from '@/components/Header';
@@ -7,7 +6,7 @@ import ProductCard from '@/components/ProductCard';
 import ChatSupport from '@/components/ChatSupport';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
-import { Search, Filter, Cpu, Zap } from 'lucide-react';
+import { Search, Filter, Cpu, Zap, MessageCircle } from 'lucide-react';
 
 const Index = () => {
   const [searchTerm, setSearchTerm] = useState('');
