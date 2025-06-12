@@ -66,18 +66,24 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom colors for the product catalog
-				brand: {
-					50: '#f0f9ff',
-					100: '#e0f2fe',
-					200: '#bae6fd',
-					300: '#7dd3fc',
-					400: '#38bdf8',
-					500: '#0ea5e9',
-					600: '#0284c7',
-					700: '#0369a1',
-					800: '#075985',
-					900: '#0c4a6e',
+				// Tech-focused color palette
+				tech: {
+					50: '#0a0a0f',
+					100: '#1a1a2e',
+					200: '#16213e',
+					300: '#0f3460',
+					400: '#0e4b99',
+					500: '#2563eb',
+					600: '#3b82f6',
+					700: '#60a5fa',
+					800: '#93c5fd',
+					900: '#dbeafe',
+				},
+				neon: {
+					green: '#00ff88',
+					blue: '#00d4ff',
+					purple: '#a855f7',
+					pink: '#ec4899',
 				}
 			},
 			borderRadius: {
@@ -105,12 +111,17 @@ export default {
 				'fade-in': {
 					'0%': { opacity: '0', transform: 'translateY(10px)' },
 					'100%': { opacity: '1', transform: 'translateY(0)' }
+				},
+				'glow': {
+					'0%, 100%': { boxShadow: '0 0 5px hsl(var(--primary))' },
+					'50%': { boxShadow: '0 0 20px hsl(var(--primary)), 0 0 30px hsl(var(--primary))' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'fade-in': 'fade-in 0.5s ease-out'
+				'fade-in': 'fade-in 0.5s ease-out',
+				'glow': 'glow 2s ease-in-out infinite alternate'
 			}
 		}
 	},
